@@ -7,10 +7,11 @@
 
 body {
   width: 100%;
+  padding-top: 50px;
   height: 100vh;
   background-color: #0a0a0a;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -21,6 +22,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.container .message {
+  width: 100%;
+  height: auto;
+  padding: 15px 0;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  visibility: hidden;
+}
+
+.container .message.success {
+  background: #154517;
+  color: #00ff08;
+  visibility: visible;
+}
+
+.container .message.failed {
+  background: #782817;
+  color: #f5250a;
+  visibility: visible;
 }
 
 .container > h1 {
@@ -112,8 +136,18 @@ body {
   font-size: 28px;
 }
 
+.task .task-info h1.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
 .task .task-info span {
   color: white;
+}
+
+.task .task-info span.completed {
+  color: gray;
+  text-decoration: line-through;
 }
 
 .task .actions {
