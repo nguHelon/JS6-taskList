@@ -18,14 +18,14 @@ submitBtn.addEventListener("click", () => {
 
     if (nameValue && descValue) {
 
+
         createListItem(id, nameValue, descValue);
 
         alertMessage("success", `${nameValue} was added successfully`);
 
-        addToLocalStorage(element.dataset.id, nameValue, descValue);
-
         nameInput.value = "";
         descInput.value = "";
+        addToLocalStorage(id, nameValue, descValue);
 
     } else if (!nameValue && !descValue) {
         alertMessage("failed", "please fill all inputs");
@@ -119,5 +119,4 @@ function createListItem(id, nameValue, descValue) {
     completeBtn.addEventListener("click", completedTask);
 
     taskContainer.appendChild(element);
-
 }
